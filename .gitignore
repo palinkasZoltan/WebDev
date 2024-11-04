@@ -1,18 +1,284 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+Skip to content
+ 
+Search Gists
+Search...
+All gists
+Back to GitHub
+@salcode
+salcode/.gitignore
+Last active 3 months ago • Report abuse
+Code
+Revisions
+18
+Stars
+117
+Forks
+40
+Clone this repository at &lt;script src=&quot;https://gist.github.com/salcode/10017553.js&quot;&gt;&lt;/script&gt;
+<script src="https://gist.github.com/salcode/10017553.js"></script>
+.gitignore file for a general web project - Bare Minimum Git
+.gitignore
+# -----------------------------------------------------------------
+# .gitignore
+# Bare Minimum Git
+# https://salferrarello.com/starter-gitignore-file/
+# ver 20221125
+#
+# From the root of your project run
+# curl -O https://gist.githubusercontent.com/salcode/10017553/raw/.gitignore
+# to download this file
+#
+# This file is tailored for a general web project, it
+# is NOT optimized for a WordPress project.  See
+# https://gist.github.com/salcode/b515f520d3f8207ecd04
+# for a WordPress specific .gitignore
+#
+# This file specifies intentionally untracked files to ignore
+# http://git-scm.com/docs/gitignore
+#
+# NOTES:
+# The purpose of gitignore files is to ensure that certain files not
+# tracked by Git remain untracked.
+#
+# To ignore uncommitted changes in a file that is already tracked,
+# use `git update-index --assume-unchanged`.
+#
+# To stop tracking a file that is currently tracked,
+# use `git rm --cached`
+#
+# Change Log:
+# 20240826 unignore .dockerignore
+# 20221125 ignore /dist directory
+#          unignore /.git-blame-ignore-revs
+# 20220720 ignore /build directory
+# 20220128 unignore .nvmrc
+# 20210211 unignore .env.example
+# 20190705 ignore private/secret files
+# 20181206 remove trailing whitespaces
+# 20180714 unignore .phpcs.xml.dist
+# 20170502 unignore composer.lock
+# 20170502 ignore components loaded via Bower
+# 20150326 ignore jekyll build directory `/_site`
+# 20150324 Reorganized file to list ignores first and whitelisted last,
+#          change WordPress .gitignore link to preferred gist,
+#          add curl line for quick installation
+#          ignore composer files (vendor directory and lock file)
+# 20140606 Add .editorconfig as a tracked file
+# 20140418 remove explicit inclusion
+#          of readme.md (this is not an ignored file by default)
+# 20140407 Initially Published
+#
+# -----------------------------------------------------------------
 
-# Other files and folders
-.settings/
+# ignore all files starting with . or ~
+.*
+~*
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# ignore node/grunt dependency directories
+node_modules/
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# Ignore build directories.
+/build
+/dist
+
+# ignore composer vendor directory
+/vendor
+
+# ignore components loaded via Bower
+/bower_components
+
+# ignore jekyll build directory
+/_site
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore private/secret files
+*.der
+*.key
+*.pem
+
+# --------------------------------------------------------
+# BEGIN Explictly Allowed Files (i.e. do NOT ignore these)
+# --------------------------------------------------------
+
+# track these files, if they exist
+!.dockerignore
+!.editorconfig
+!.env.example
+!.git-blame-ignore-revs
+!.gitignore
+!.nvmrc
+!.phpcs.xml.dist
+@fredgrott
+fredgrott commented on Dec 1, 2017
+Thanks for posting this as I was looking for exactly this gitignore file....switched from native java android coding to web and design and did not have an adequate gitignore setup for web projects
+
+@juanma386
+juanma386 commented on Jul 6, 2018
+WooOoow, very good, thanks.
+
+@5pid3rm3n
+5pid3rm3n commented on Oct 8, 2018
+Thx!
+
+@JohannesBe
+JohannesBe commented on Jul 5, 2019
+Please add a section for secrets (e.g. .pem, .key files etc)
+
+@salcode
+Author
+salcode commented on Jul 5, 2019
+@JohannesBe thanks for the feedback, this is a good idea
+
+Off the top of my head it seems we should add the following
+
+*.key
+*.pem
+*.der
+@juanhu9999
+juanhu9999 commented on Jul 22, 2020
+Thanks!!
+
+@PotLid
+PotLid commented on Jul 27, 2020
+Thanks for the sharing!
+
+@titelplusplus
+titelplusplus commented on Jan 8, 2021
+Thanks for the sharing. I will try this file and send you feedback. It looks very good. ;-)
+
+@YashTotale
+YashTotale commented on Jan 13, 2021
+This is great! I think adding .DS_Store in a misc category would be a good idea 😄
+
+@salcode
+Author
+salcode commented on Jan 14, 2021
+Hi @YashTotale,
+
+I believe
+
+# ignore all files starting with . or ~
+.*
+should ignore .DS_Store. If you are seeing any different behavior let me know.
+
+One note is that if you've added a file (e.g. .DS_Store) to your Git repo before you add this .gitignore, the file will not be ignored because it is already part of the repo.
+
+@YashTotale
+YashTotale commented on Jan 14, 2021
+Oh, I glossed over that section. Thanks!
+
+@version0chiro
+version0chiro commented on Feb 11, 2021
+Should we add .env to it too? Like I am new to .gitignore usage so I just had that doubt.
+
+@salcode
+Author
+salcode commented on Feb 11, 2021
+@version0chiro
+
+Yes, .env should be excluded. See Should I add .env to .gitignore?.
+
+In this case, I'm ignoring all files that start with a period with a few exceptions (you can read more about this technique at .gitignore Hidden Files with Exceptions).
+
+Reviewing this made me realize, I had not added .env.example to my list of allowed files that start with a period (.), so I've updated this .gitignore - thanks.
+
+@waleedtariq109
+waleedtariq109 commented on Aug 5, 2021
+Thank you soo much! This is really helpfull.
+
+@C-Ezra-M
+C-Ezra-M commented on Nov 9, 2022
+@version0chiro
+
+Yes, .env should be excluded. See Should I add .env to .gitignore?.
+
+In this case, I'm ignoring all files that start with a period with a few exceptions (you can read more about this technique at .gitignore Hidden Files with Exceptions).
+
+Reviewing this made me realize, I had not added .env.example to my list of allowed files that start with a period (.), so I've updated this .gitignore - thanks.
+
+The .vscode/extensions.json file should not be ignored.
+
+@salcode
+Author
+salcode commented on Nov 9, 2022
+@Keyacom
+
+I don't think it makes sense to include an editor specific file, like .vscode/extensions.json, in a Git repo.
+
+I'm certainly open to hearing other thoughts but for now I don't have any plans in changing this behavior.
+
+@thisisrexa
+thisisrexa commented on Nov 24, 2022
+Tnx! but some build tools and module blunders use the /dist folder for build outputs like Webpack.
+
+@salcode
+Author
+salcode commented on Nov 25, 2022
+@r3x4w
+
+If I understand correctly, you're suggesting I add /dist to this .gitignore file.
+
+Sure, that sounds like a good idea 👍
+
+@dan-carroll
+dan-carroll commented on Mar 12, 2023
+Add this to the github/gitignore collection.
+
+@ictus4u
+ictus4u commented on Aug 25
+Thank you!
+
+Could you please add the .dockerignore file to the list of explicitly allowed files starting with a dot (.)?
+
+@salcode
+Author
+salcode commented on Aug 29
+@ictus4u Good suggestion, thanks! I've added .dockerignore to the allow list 👍
+
+@palinkasZoltan
+Comment
+ 
+Leave a comment
+ 
+Footer
+© 2024 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact
+Manage cookies
+Do not share my personal information
