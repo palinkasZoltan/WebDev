@@ -1,0 +1,18 @@
+a {
+    text-decoration: none;
+    margin: 30px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.header-link {
+    color: darkgreen;
+}
+
+.header-link:hover {
+    color: blue;
+}
+
+.footer-link {
+    color: salmon;
+}
