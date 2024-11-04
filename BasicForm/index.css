@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: #fce38a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius:15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #f9c74f;
+    margin-bottom:10px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #f9c74f;
+    border-radius: 5px;
+    font-size: 14px;
+    font-style: italic;
+    color: #444;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #ff6b6b;
+}
+
+input::placeholder {
+    color: #888;
+    font-size: italic;
+}
+
+button {
+    background-color: #e71d36;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #ff6b6b;
+}
