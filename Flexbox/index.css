@@ -1,0 +1,51 @@
+.cards-list {
+    border: 1px solid lawngreen;
+    display: flex;
+    width: 660px;
+    justify-content: space-between; /* Doesn't leave space between content and border */
+    /* 
+    justify-content: space-around; - Leaves spaces between content and border
+    justify-content: center;
+    justify-content: flex-start;
+    justify-content: flex-end; 
+    */
+
+    /* 
+    align-items: stretch;
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: baseline;
+    align-items: center;
+    */
+}
+.temp {
+    flex-grow: 2; 
+    /* 
+    all other items have this on 1 by default so it grows twice as big IF there is enough space
+    */
+    order: 1000;
+    /*
+    It doesn't matter how many items we have, we can set this on whatever,
+    and the order will be from smaller to bigger between the items
+    */
+}
+
+.card {
+    border: 1px dashed cadetblue;
+    padding: 10px;
+    width: 80px;
+    flex-basis: calc(100% / 7);
+    /*
+    Sets the initial size of the flex-item, before any other transformations are used on it
+    */
+}
+
+.card img {
+    display: block;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
