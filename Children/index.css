@@ -1,0 +1,28 @@
+li:first-child {
+    color: red;
+}
+
+li:last-child {
+    color: blue;
+}
+
+li:nth-child(even) {
+    color: green;
+}
+
+/* 
+Typical nth-child selectors: 
+
+  --Selects every second element 
+  .item:nth-child(2n) {}
+  
+  -- Selects the first three elements
+  .item:nth-child(-n + 3) {}
+  
+  -- Selects all odd elements
+  .item:nth-child(odd) {}
+  
+  -- Selects the last three elements 
+  .item:nth-last-child(-n + 3) {}
+   
+*/
