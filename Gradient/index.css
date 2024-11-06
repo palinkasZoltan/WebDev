@@ -1,0 +1,100 @@
+:root {
+    --starting-color: rgb(204, 43, 94);
+    --ending-color: rgb(117, 58, 136);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box {
+    margin: 10px;
+    width: 240px;
+    height: 240px;
+    
+    /* put the box in the center of the box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.box:first-child {
+    background-image: linear-gradient(
+        to bottom,
+        var(--starting-color),
+        var(--ending-color)
+    );
+}
+
+.box:nth-child(2) {
+    background-image: linear-gradient(
+        to right,
+        var(--starting-color),
+        var(--ending-color)
+    );
+}
+
+.box:nth-child(3) {
+    background-image: linear-gradient(
+        to top,
+        var(--starting-color),
+        var(--ending-color)
+    );
+}
+
+.box:nth-child(4) {
+    background-image: linear-gradient(
+        to left,
+        var(--starting-color),
+        var(--ending-color)
+    );
+}
+
+.colored:nth-child(1) {
+    background-image: linear-gradient(
+        to left,
+        #f949c6 20%,
+        #fc2947 40%,
+        #fe6244 60%
+    );
+}
+
+.colored:nth-child(2) {
+    background-image: linear-gradient(
+        to left,
+        #f949c6 10%,
+        #fc2947 10%,
+        #fe6244 40%,
+        black 40%
+    );
+}
+
+.radial:nth-child(1){
+    background-image: radial-gradient(
+        at center,
+        var(--starting-color),
+        var(--ending-color)
+    );
+}
+
+.radial:nth-child(2){
+    background-image: radial-gradient(
+        at top left,
+        var(--starting-color),
+        var(--ending-color)
+    );
+}
+
+.radial:nth-child(3){
+    background-image: radial-gradient(
+        at bottom right,
+        var(--starting-color),
+        var(--ending-color)
+    );
+}
