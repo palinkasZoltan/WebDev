@@ -1,0 +1,51 @@
+<!-- <html>
+    <head>
+        <title>The Mega Cart</title> 
+        <script type="text/javascript" src="data.json" ></script>     
+        <script src="javascript.js"></script>
+    </head>
+    <body>
+        <div class="panel">
+			<form id="jsonFile" name="jsonFile" enctype="multipart/form-data" method="post">
+
+                <fieldset>
+                  <h2>Json File</h2>
+                   <input type='file' id='fileinput'> 
+                   <input type='button' id='btnLoad' value='Load' onclick='loadFile();'>
+                </fieldset>
+            </form>
+		</div>
+    </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Read Text File</title>
+</head>
+
+<body>
+    <input type="file" name="inputfile" id="inputfile">
+    <br>
+
+    <pre id="output"></pre>
+
+    <script type="text/javascript">
+        document.getElementById('inputfile')
+            .addEventListener('change', function () {
+
+                let fr = new FileReader();
+                fr.onload = function () {
+                    document.getElementById('output')
+                        .textContent = fr.result;
+                }
+                
+                console.log(this.files[0]);
+                fr.readAsText(file);
+            })
+    </script>
+</body>
+
+</html>
